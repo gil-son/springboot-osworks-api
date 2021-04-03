@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+	<parent><!-- Extends from other project Maven Spring Boot CTRL+ left button to see-->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.4</version>
@@ -17,6 +17,16 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+	
+		
+		<!--	Content Negociation to add XML
+		<dependency>
+			
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataform-xml</artifactId>
+		
+		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -26,6 +36,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId> <!-- Use on production -->
+		
 		</dependency>
 	</dependencies>
 

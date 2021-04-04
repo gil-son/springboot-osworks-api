@@ -2,7 +2,7 @@
 
 ## Diagram
 
-<a href="https://imgbox.com/ZREXH1qU" target="_blank"><img src="https://images2.imgbox.com/21/e3/ZREXH1qU_o.png" alt="image host"/></a>
+<a href="https://imgbox.com/nrKZuAW5" target="_blank"><img src="https://images2.imgbox.com/f5/16/nrKZuAW5_o.png" alt="image host"/></a>
 
 ### Technical prerequisites
 <ul>
@@ -28,8 +28,11 @@
  </ul>
 
 
-### Avaliable
+### Available
 
 <ul>
   <li>Spring Web (starter and dependencies) </li>
+  <li>JPA</li> 
+  <li>MySQL Driver</li>
+  <li>Flyway</li>
 </ul>

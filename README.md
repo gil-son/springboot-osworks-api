@@ -31,8 +31,8 @@
 ### Available
 
 <ul>
-  <li>Spring Web (starter and dependencies) </li>
-  <li>JPA</li> 
-  <li>MySQL Driver</li>
-  <li>Flyway</li>
+  <li><a href="https://spring.io/projects/spring-ws">Spring Web (starter and dependencies)<a/> </li>
+  <li><a href="https://spring.io/projects/spring-data-jpa">JPA<a/></li> 
+  <li><a href="https://spring.io/guides/gs/accessing-data-mysql/">MySQL Driver<a/></li>
+  <li><a href="https://www.baeldung.com/database-migrations-with-flyway">Flyway<a/></li>
 </ul>

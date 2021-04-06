@@ -6,14 +6,14 @@
 
 ### Technical prerequisites
 <ul>
-  <li>Object-oriented programming</li>
-  <li>JSON</li>
+  <li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming<a/></li>
+  <li><a href="https://en.wikipedia.org/wiki/JSON">JSON<a/></li>
 </ul>
 
 ### Utilities
 <ul>
   <li>Workspace-Spring-Tool-Suite-4-4.9.0</li>
-  <li>Insomnia or Postman</li>
+  <li><a href="https://insomnia.rest/download">Insomnia<a/> or <a href="https://www.postman.com/">Postman<a/></li>
 </ul>
 
 

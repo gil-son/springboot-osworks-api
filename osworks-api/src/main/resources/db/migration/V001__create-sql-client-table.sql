@@ -5,3 +5,5 @@ create table client(
     telephone varchar(20) not null,
     primary key(id)
 );
+
+

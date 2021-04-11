@@ -36,3 +36,9 @@
   <li><a href="https://spring.io/guides/gs/accessing-data-mysql/">MySQL Driver<a/></li>
   <li><a href="https://www.baeldung.com/database-migrations-with-flyway">Flyway<a/></li>
 </ul>
+
+https://www.baeldung.com/spring-boot-bean-validation
+### Additional
+<ul>
+  <li><a href="https://spring.io/projects/spring-ws">Jakarta</a> - Use to validation CRUD. If a request pass a value null, it will generate complications</li>
+</ul>

@@ -6,10 +6,12 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +57,7 @@ public class ClientController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Client add(@RequestBody Client client) {
+	public Client add(@Valid @RequestBody Client client) { // @Valid to able Validation from Client extends JPA @RequestBody say that is an object client
 		return clientRepository.save(client);
 	}
 	
@@ -71,12 +73,24 @@ public class ClientController {
 			return ResponseEntity.notFound().build();
 		}
 		
-		client.setId(clientId);
-		clientRepository.save(client);
+		client.setId(clientId); // This ensure that is update and not create another user
+		// clientRepository.save(client);
+		
+		client = clientRepository.save(client);
 		
 		return ResponseEntity.ok(client);
 	}
 	
+	@DeleteMapping("/{clientId}")
+	public ResponseEntity<Void> remover(@PathVariable Long clientId){
+		if(!clientRepository.existsById(clientId)) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		clientRepository.deleteById(clientId);
+		
+		return ResponseEntity.noContent().build();
+	}
 	
 	/*
 		@GetMapping("clients")

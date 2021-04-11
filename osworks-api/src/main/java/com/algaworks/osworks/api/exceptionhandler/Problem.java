@@ -10,10 +10,35 @@ public class Problem {
 	private String title;
 	private List<Field> fields;
 	
+	
+	
 	public static class Field{
 		
 		private String name;
 		private String message;
+		
+		
+		
+		public Field(String name, String message) {
+			this.name = name;
+			this.message = message;
+		}
+		
+		
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getMessage() {
+			return message;
+		}
+		public void setMessage(String message) {
+			this.message = message;
+		}
+		
+		
 	}
 	
 	
@@ -36,7 +61,12 @@ public class Problem {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+	public List<Field> getFields() {
+		return fields;
+	}
+	public void setFields(List<Field> fields) {
+		this.fields = fields;
+	}
 	
 	
 	

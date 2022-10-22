@@ -48,3 +48,11 @@
 <ul>
   <li><a href="https://spring.io/projects/spring-ws">Jakarta</a> - Use to validation CRUD. If a request pass a value null, it will generate complications</li>
 </ul>
+
+### Reference
+
+<ul>
+  <li>
+     <a href="https://mergulhospring.com.br/mergulho-spring-rest/">AlgaWorks</a>
+  </li>
+</ul>

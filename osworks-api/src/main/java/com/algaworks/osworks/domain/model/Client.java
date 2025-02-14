@@ -1,33 +1,41 @@
 package com.algaworks.osworks.domain.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.Instant;
+
+@Setter
+@Getter
+@ToString
+@NoArgsConstructor
 @Entity
 public class Client {
 	
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
-	@NotBlank // Verify if  is Not null, not  void, not contain only spaces
+	@NotBlank(message = "Name is mandatory") // Verify if  is Not null, not  void, not contain only spaces
 	@Size(max = 60)
 	private String name;
-	
-	@NotBlank
+
+	@NotBlank(message = "Email is mandatory")
 	@Email
 	@Size(max = 255)
 	private String email;
-	
-	@NotBlank
+
+	@NotBlank(message = "Telephone is mandatory")
 	@Size(max = 20)
 	private String telephone;
 	

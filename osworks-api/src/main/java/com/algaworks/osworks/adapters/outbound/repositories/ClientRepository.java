@@ -1,4 +1,4 @@
-package com.algaworks.osworks.domain.repository;
+package com.algaworks.osworks.adapters.outbound.repositories;
 
 import java.util.List;
 

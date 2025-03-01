@@ -1,8 +1,8 @@
-package com.algaworks.osworks.api.controller;
+package com.algaworks.osworks.adapters.inbound;
 
 
 import com.algaworks.osworks.domain.model.Client;
-import com.algaworks.osworks.domain.repository.ClientRepository;
+import com.algaworks.osworks.adapters.outbound.repositories.ClientRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
-
 	
 	@Autowired // Instantiate the ClientRepository here
 	private ClientRepository clientRepository;
@@ -41,24 +40,18 @@ public class ClientController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Client add(@Valid @RequestBody Client client) { // @Valid to able Validation from Client extends JPA @RequestBody say that is an object client
-		return clientRepository.save(client);
+	public ResponseEntity<Client> add(@Valid @RequestBody Client client) { // @Valid to able Validation from Client extends JPA @RequestBody say that is an object client
+		return ResponseEntity.ok(clientRepository.save(client));
 	}
-	
-	
-	
-	
+
 	@PutMapping("/{clientId}")
-	//@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Client> update(@PathVariable Long clientId,
 			@RequestBody Client client) {
 		
 		if(!clientRepository.existsById(clientId)) {
 			return ResponseEntity.notFound().build();
 		}
-		
-		client.setId(clientId); // This ensure that is update and not create another user
-		// clientRepository.save(client);
+		client.setId(clientId); // This ensure that is updated and not created another user
 		
 		client = clientRepository.save(client);
 		

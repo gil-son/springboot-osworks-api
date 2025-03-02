@@ -1,45 +1,21 @@
 package com.algaworks.osworks.domain.model;
 
-
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.Instant;
-
-@Setter
-@Getter
-@ToString
-@NoArgsConstructor
-@Entity
 public class Client {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
-	
-	@Column
-	@NotBlank(message = "Name is mandatory") // Verify if  is Not null, not  void, not contain only spaces
-	@Size(max = 60)
 	private String name;
-
-	@NotBlank(message = "Email is mandatory")
-	@Email
-	@Size(max = 255)
 	private String email;
-
-	@NotBlank(message = "Telephone is mandatory")
-	@Size(max = 20)
 	private String telephone;
-	
-	
+
+	Client(){}
+
+	public Client(Long id, String name, String email, String telephone) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.telephone = telephone;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -64,6 +40,7 @@ public class Client {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -87,6 +64,4 @@ public class Client {
 			return false;
 		return true;
 	}
-	
-	
 }
